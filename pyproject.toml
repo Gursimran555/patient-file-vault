@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patient-file-vault"
+version = "2.0.0"
+description = "Unix-style permissions, AES-GCM at rest and a tamper-evident audit log for patient files, with v1 vs v2 attack comparison"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Gursimran Singh"}]
+requires-python = ">=3.10"
+dependencies = ["cryptography>=42"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["vault", "legacy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
